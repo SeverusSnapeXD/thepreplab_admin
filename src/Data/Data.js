@@ -11,9 +11,9 @@ import{
     UilBell,
     UilHipchat,
     UilUserCircle,
-    UilPackage,
-    UilChart,
-    UilSignOutAlt,
+    // UilPackage,
+    // UilChart,
+    // UilSignOutAlt,
     UilMoneyWithdrawal,
     UilUsdSquare,
 } from "@iconscout/react-unicons";
@@ -22,51 +22,63 @@ import{
 export const SidebarData = [
     {
         icon: UilEstate,
-        heading: "Dashboard"
+        heading: "Dashboard",
+        path: '/'
     },
     {
         icon: UilPizzaSlice,
-        heading: "Foods"
+        heading: "Foods",
+        path: '/addfood'
     },
     {
         icon: UilSearchAlt,
-        heading: "Explore"
+        heading: "Explore",
+        path: '/explore'
     },
     {
         icon: UilClapperBoard,
-        heading: "Posts"
+        heading: "Posts",
+        path: '/posts'
     },
     {
         icon: UilNewspaper,
-        heading: "Stories"
+        heading: "Stories",
+        path: '/stories'
     },
     {
         icon: UilChannel,
-        heading: "Channels"
+        heading: "Channels",
+        path: '/channels'
     },
     {
         icon: UilFileCheck,
-        heading: "Events"
+        heading: "Events",
+        path: '/events'
     },
     {
         icon: UilClipboardAlt,
-        heading: "Orders"
+        heading: "Orders",
+        path: '/orders'
     },
     {
         icon: UilUsersAlt,
-        heading: "Users"
+        heading: "Users",
+        path: '/users'
     },
     {
         icon: UilBell,
-        heading: "Notifications"
+        heading: "Notifications",
+        path: '/notifications'
     },
     {
         icon: UilHipchat,
-        heading: "Chat"
+        heading: "Chat",
+        path: '/chat'
     },
     {
         icon: UilUserCircle,
-        heading: "Account"
+        heading: "Account",
+        path: '/account'
     },
 ];
 

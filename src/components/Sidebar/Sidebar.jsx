@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../../imgs/logo.png';
+import {  useNavigate } from 'react-router-dom';
 
 import { SidebarData } from '../../Data/Data';
 import {UilSignOutAlt} from '@iconscout/react-unicons';
@@ -9,7 +10,15 @@ import { useState } from 'react';
 
 const Sidebar = () => {
 
+    const navigate = useNavigate()
     const[selected, setSelected] = useState(0)
+
+    const handleClick = (item,i) => {
+        setSelected(i);
+        navigate(item.path)
+        console.log('Iettm  ',item)
+    }
+
 
   return (
     <div className="Sidebar">
@@ -23,10 +32,13 @@ const Sidebar = () => {
         <div className="menu">
             {SidebarData.map((item, index)=>{
                 return(
-                    <div className={selected===index?'menuItem active': 'menuItem'}
+                    <div
+                    // style={({isActive})=> isActive ? 'menuItem active': 'menuItem'}}
+                 className={ index === selected ? 'menuItem active': 'menuItem'}
                     key={index}
-                    onClick={()=>setSelected(index)}
+                    onClick={()=>handleClick(item , index)}
                     >
+
                         <item.icon/>
                         <span>
                             {item.heading}
