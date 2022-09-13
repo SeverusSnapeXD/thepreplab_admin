@@ -42,7 +42,6 @@ const handleSubmit = async(event) => {
 }
 
 //Tags
-
 const [formFields, setFormFields] = useState([
   { tags: '' },
 ]);
@@ -100,7 +99,7 @@ const [formNut, setFormNut] = useState([
 ]);
 
 const handleFormChangeNut = (event, index) => {
-  let data = [...formIngr];
+  let data = [...formNut];
   data[index][event.target.name] = event.target.value;
   setFormIngr(data);
 }
@@ -346,13 +345,9 @@ const removeNut = (index) => {
         </table>
         <br/>
         <div className="spaceBtn">
-                        
-                            <Button variant="outlined" color="success" type="submit">Save</Button>
-                        
-                        <div className="btsp"></div>
-                            <Button variant="outlined" onClick={handleReset}>Clear</Button>
-                        
-                        
+          <Button variant="outlined" color="success" type="submit">Save</Button>
+            <div className="btsp"></div>
+          <Button variant="outlined" onClick={handleReset}>Clear</Button>
         </div>
 
         
