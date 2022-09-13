@@ -1,0 +1,15 @@
+.MainDiv{
+    display: flex;
+    flex-direction: column;
+    
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+tr.spaceUnder>td {
+    padding-bottom: 1em;
+  }
+
+.td {
+    padding: 0 10px;
+  }

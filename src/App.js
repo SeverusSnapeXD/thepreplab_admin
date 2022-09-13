@@ -2,7 +2,7 @@ import './App.css'
 import MainDash from './components/MainDash/MainDash';
 import Sidebar from './components/Sidebar/Sidebar';
 import {BrowserRouter,Route , Routes } from 'react-router-dom'
-import AddFood from './screens/AddFood';
+import AddFood from './screens/AddFood/AddFood';
 
 function App() {
   return (
