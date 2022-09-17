@@ -16,6 +16,7 @@ import{
     // UilSignOutAlt,
     UilMoneyWithdrawal,
     UilUsdSquare,
+    UilEye
 } from "@iconscout/react-unicons";
 
 //Side Bar
@@ -29,6 +30,11 @@ export const SidebarData = [
         icon: UilPizzaSlice,
         heading: "Foods",
         path: '/addfood'
+    },
+    {
+        icon: UilEye,
+        heading: "View Foods",
+        path: '/viewfood'
     },
     {
         icon: UilSearchAlt,
