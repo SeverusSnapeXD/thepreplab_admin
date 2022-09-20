@@ -171,14 +171,17 @@ const [formImge, setFormImge] = useState([
             <table>
                 <tr className="spaceUnder">
                     <td className="td">
+                    <FormControl sx={{ m: 0, minWidth: 250 }}>
                         <TextField
                             name='Title'
                             label='Title'
                             value={formValue.Title}
                             onChange={handleChange}
                         />
+                        </FormControl>
                     </td>
                     <td className="td" rowSpan={'2'}>
+                    <FormControl sx={{ m: 0, minWidth: 225 }}>
                         <TextField
                             id="outlined-multiline-static"
                             label="Description"
@@ -188,11 +191,12 @@ const [formImge, setFormImge] = useState([
                             value={formValue.Description}
                             onChange={handleChange}
                         />
+                        </FormControl>
                     </td>
                 </tr>
                 <tr className="spaceUnder">
                     <td className="td">
-                        <FormControl sx={{ m: 0, minWidth: 150 }}>
+                        <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <InputLabel id="demo-simple-select-helper-label">Post Type</InputLabel>
                             <Select
                                     label="Post Type"
@@ -214,6 +218,7 @@ const [formImge, setFormImge] = useState([
                 
                 <tr className="spaceUnder">
                     <td className="td">
+                    <FormControl sx={{ m: 0, maxWidth: 250 }}>
                         <h3>Video</h3>
                         <TextField
                             name='Vdo'
@@ -221,6 +226,7 @@ const [formImge, setFormImge] = useState([
                             value={formValue.Vdo}
                             onChange={handleChange}
                         />
+                        </FormControl>
                     </td>
                 </tr>
                 <tr>
@@ -231,14 +237,15 @@ const [formImge, setFormImge] = useState([
                         {formFields.map((form, index) => {
                         return (
                         <div key={index}>
+                          <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <TextField
                                 name='tags'
                                 label="Tags"
                                 onChange={event => handleFormChange(event, index)}
                                 value={form.tags}
                             />
-              
-                            <FormControl sx={{ m: 0, minWidth: 150 }}>
+                          </FormControl>
+                            <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <InputLabel id="demo-simple-select-helper-label">Colors</InputLabel>
                                 <Select
                                 label="Colors"
@@ -267,7 +274,7 @@ const [formImge, setFormImge] = useState([
                         {formIngr.map((form, index) => {
                         return (
                         <div key={index}>
-
+                            <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <TextField
                                 name='Ingredients'
                                 label="Ingredients"
@@ -275,6 +282,8 @@ const [formImge, setFormImge] = useState([
                                 onChange={event => handleFormChangeIngr(event, index)}
                                 value={formIngr.Ingredients}
                             />
+                            </FormControl>
+                            <FormControl sx={{ m: 0, maxWidth: 250 }}>
                             <TextField
                                 // label="Ingredient Image"
                                 name="IngImg"
@@ -282,6 +291,7 @@ const [formImge, setFormImge] = useState([
                                 value={formIngr.IngImg}
                                 onChange={event => handleFormChangeIngr(event, index)}
                             />
+                            </FormControl>
                             
                             <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeIngr(index)}/>
                         </div>
@@ -297,7 +307,7 @@ const [formImge, setFormImge] = useState([
                         return (
                         <div key={index}>
 
-                            <FormControl sx={{ m: 0, minWidth: 150 }}>
+                            <FormControl sx={{ m: 0, minWidth: 250 }}>
                                 <InputLabel id="demo-simple-select-helper-label">Nutritions</InputLabel>
                                 <Select
                                     label="Nutritions"
@@ -314,7 +324,8 @@ const [formImge, setFormImge] = useState([
                                     <MenuItem value={'3'}>Thirty</MenuItem>
                                 </Select>
                             </FormControl>
-
+                            
+                            <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <TextField
                                 name='Value'
                                 label="Value"
@@ -322,7 +333,7 @@ const [formImge, setFormImge] = useState([
                                 onChange={event => handleFormChangeNut(event, index)}
                                 value={formIngr.Ingredients}
                             />
-
+                            </FormControl>
                             <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeNut(index)}/>
                         </div>
                         )
@@ -335,20 +346,23 @@ const [formImge, setFormImge] = useState([
                         {formReStp.map((form, index) => {
                         return (
                         <div key={index}>
-
+                            <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <TextField 
                                 name='Step'
                                 label="Step"
                                 onChange={event => handleFormChangeReStp(event, index)}
                                 value={formReStp.Step}
                             />
+                            </FormControl>
+
+                            <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <TextField
                                 name='ReceipeSteps'
                                 label="Receipe Description"
                                 onChange={event => handleFormChangeReStp(event, index)}
                                 value={formReStp.RecipeSteps}
                             />
-                            
+                            </FormControl>
                             <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeReStp(index)}/>
                         </div>
                         )
@@ -362,6 +376,7 @@ const [formImge, setFormImge] = useState([
                         {formImge.map((form, index) => {
                         return (
                         <div key={index}>
+                          <FormControl sx={{ m: 0, minWidth: 500 }}>
                             <TextField
                                 // label="Ingredient Image"
                                 name="Imge"
@@ -369,7 +384,7 @@ const [formImge, setFormImge] = useState([
                                 value={formImge.Imge}
                                 onChange={event => handleFormChangeImge(event, index)}
                             />
-                            
+                            </FormControl>
                             <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeImge(index)}/>
                         </div>
                         )

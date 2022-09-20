@@ -5,7 +5,8 @@ import {BrowserRouter,Route , Routes } from 'react-router-dom'
 import AddFood from './screens/AddFood/AddFood';
 import Explore from './screens/Explore/Explore';
 import ViewFood from './screens/ViewFood/ViewFood';
-
+import Posts from './screens/Posts/Posts';
+import MainChat from './screens/Chat/MainChat';
 function App() {
   return (
     <div className="App">
@@ -17,7 +18,9 @@ function App() {
             <Route path='/addfood' element={ <AddFood/>} />
             <Route path='/explore' element={<Explore/>} />
             <Route path='/viewfood' element={<ViewFood/>} />
-          
+            <Route path='/posts' element={<Posts/>} />
+            <Route path='/chat' element={<MainChat/>} />
+
           </Routes>
           </BrowserRouter>
         </div>

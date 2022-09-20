@@ -128,6 +128,7 @@ const removeNut = (index) => {
         <tr className="spaceUnder">
            
            <td className="td">
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
              name="Name"
@@ -136,9 +137,27 @@ const removeNut = (index) => {
              onChange={handleChange}
               
            />
+           </FormControl>
            </td>
+
+           <td className="td" >
+          <FormControl sx={{ m: 0, maxWidth: 250 }}>
+            <TextField
+            // label="Food Image"
+            name="FoodImage"
+            type="file"
+            value={formValue.FoodImage}
+            onChange={handleChange}
+            />
+            </FormControl>
+          </td>
+           
  
-           <td className="td" rowSpan={'2'}>
+        </tr>
+
+        <tr className="spaceUnder" >
+        <td className="td" rowSpan={'2'}>
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
            <TextField
               id="outlined-multiline-static"
               label="Description"
@@ -148,39 +167,30 @@ const removeNut = (index) => {
               value={formValue.Description}
              onChange={handleChange}
             />
+            </FormControl>
            </td>
- 
-        </tr>
-
-        <tr className="spaceUnder" >
-          <td className="td" >
-            <TextField
-            // label="Food Image"
-            name="FoodImage"
-            type="file"
-            value={formValue.FoodImage}
-            onChange={handleChange}
-            />
-            
-          </td>
           
+           <td className="td">
+
+            <FormControl sx={{ m: 0, minWidth: 250 }}>
+              <TextField
+              
+              name="Price"
+              label="Price"
+              value={formValue.Price}
+              onChange={handleChange}
+            />
+            </FormControl>
+            </td>
         </tr>
 
         <tr className="spaceUnder">
            
-          <td className="td">
-             <TextField
-             
-             name="Price"
-             label="Price"
-             value={formValue.Price}
-             onChange={handleChange}
-           />
-           </td>
-
+          
+        
           
            <td className="td" >
-           <FormControl sx={{ m: 0, minWidth: 150 }}>
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
            <InputLabel id="demo-simple-select-helper-label">Food Type</InputLabel>
             <Select
               label="Food Type"
@@ -202,6 +212,7 @@ const removeNut = (index) => {
 
           <tr className="spaceUnder">
            <td className="td">
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
              name="WeekNumber"
@@ -209,9 +220,11 @@ const removeNut = (index) => {
              value={formValue.WeekNumber}
              onChange={handleChange}
            />
+           </FormControl>
            </td>
           
            <td className="td">
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
              name="ItemQuantity"
@@ -219,6 +232,7 @@ const removeNut = (index) => {
              value={formValue.ItemQuantity}
              onChange={handleChange}
            />
+           </FormControl>
            </td>
         </tr>
         <tr>
@@ -230,6 +244,7 @@ const removeNut = (index) => {
           {formFields.map((form, index) => {
           return (
           <div key={index}>
+            <FormControl sx={{ m: 0, minWidth: 250 }}>
               <TextField
                 name='tags'
                 label="Tags"
@@ -237,8 +252,9 @@ const removeNut = (index) => {
                 onChange={event => handleFormChange(event, index)}
                 value={form.tags}
               />
+              </FormControl>
               
-              <FormControl sx={{ m: 0, minWidth: 150 }}>
+              <FormControl sx={{ m: 0, minWidth: 250 }}>
            <InputLabel id="demo-simple-select-helper-label">Colors</InputLabel>
             <Select
               label="Colors"
@@ -279,6 +295,7 @@ const removeNut = (index) => {
             return (
             <div key={index}>
 
+              <FormControl sx={{ m: 0, minWidth: 250 }}>
                 <TextField
                   name='Ingredients'
                   label="Ingredients"
@@ -286,6 +303,9 @@ const removeNut = (index) => {
                   onChange={event => handleFormChangeIngr(event, index)}
                   value={formIngr.Ingredients}
                 />
+                </FormControl>
+
+                <FormControl sx={{ m: 0, maxWidth: 250 }}>
                 <TextField
                 // label="Ingredient Image"
                 name="IngImg"
@@ -293,7 +313,7 @@ const removeNut = (index) => {
                 value={formIngr.IngImg}
                 onChange={event => handleFormChangeIngr(event, index)}
                 />
-                
+                </FormControl>
                 <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeIngr(index)}/>
             </div>
               )
@@ -308,7 +328,7 @@ const removeNut = (index) => {
               return (
               <div key={index}>
 
-                <FormControl sx={{ m: 0, minWidth: 150 }}>
+                <FormControl sx={{ m: 0, minWidth: 250 }}>
                   <InputLabel id="demo-simple-select-helper-label">Nutritions</InputLabel>
                   <Select
                     label="Nutritions"
@@ -326,6 +346,7 @@ const removeNut = (index) => {
                   </Select>
                 </FormControl>
 
+                <FormControl sx={{ m: 0, minWidth: 250 }}>
                 <TextField
                   name='Value'
                   label="Value"
@@ -333,6 +354,7 @@ const removeNut = (index) => {
                   onChange={event => handleFormChangeNut(event, index)}
                   value={formIngr.Ingredients}
                 />
+                </FormControl>
 
                 <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeNut(index)}/>
               </div>
