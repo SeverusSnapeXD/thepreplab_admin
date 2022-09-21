@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Input, InputLabel, MenuItem, Select, FormControl, IconButton} from "@mui/material";
+import { Api } from '../../backend/api';
 
 function AddFood() {
 
@@ -39,6 +40,8 @@ const handleReset = () => {
 
 const handleSubmit = async(event) => {
   event.preventDefault();
+  console.log('====================')
+  Api.addFoodApi();
 }
 
 //Tags
