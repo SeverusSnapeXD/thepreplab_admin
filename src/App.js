@@ -7,6 +7,7 @@ import Explore from './screens/Explore/Explore';
 import ViewFood from './screens/ViewFood/ViewFood';
 import Posts from './screens/Posts/Posts';
 import MainChat from './screens/Chat/MainChat';
+import ViewPost from './screens/ViewPost/MainTable';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
             <Route path='/viewfood' element={<ViewFood/>} />
             <Route path='/posts' element={<Posts/>} />
             <Route path='/chat' element={<MainChat/>} />
+            <Route path='/viewposts' element={ <ViewPost/>} />
 
           </Routes>
           </BrowserRouter>

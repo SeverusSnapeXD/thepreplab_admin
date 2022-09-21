@@ -47,6 +47,11 @@ export const SidebarData = [
         path: '/posts'
     },
     {
+        icon: UilEye,
+        heading: "View Posts",
+        path: '/viewposts'
+    },
+    {
         icon: UilNewspaper,
         heading: "Stories",
         path: '/stories'
