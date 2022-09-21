@@ -13,16 +13,30 @@ import Login from './components/Login/Login';
 import Order from './screens/Order/Order';
 function App() {
 
-  const [logstate,setLogstate] = React.useState(false);
+  const [logged , setLogged] = React.useState(false);
+
+  const handleLogin = () => {
+    setLogged(true);
+  }
+
   return (
     <div className="App">
-      {/* <Routes>
-        <Route path='/login' element={<Login/>} />
-      </Routes> */}
-      {/* {logstate?<MainDash chstate={logstate => setLogstate(logstate)}/>:<Login changeState={logstate => setLogstate(logstate)}/>} */}
         <div className="AppGlass">
-        
-          <BrowserRouter>
+          {
+            logged ?
+            <HomeStack /> :
+            <Login onPress={handleLogin} /> 
+          }
+        </div>
+    </div>
+  );
+}
+
+export default App;
+
+const HomeStack = () => {
+  return(
+<BrowserRouter>
           <Sidebar/> 
           <Routes>
             <Route path='/' element={ <MainDash/>} />
@@ -35,9 +49,5 @@ function App() {
             <Route path='/orders' element={<Order/>} />
           </Routes>
           </BrowserRouter>
-        </div>
-    </div>
-  );
+  )
 }
-
-export default App;
