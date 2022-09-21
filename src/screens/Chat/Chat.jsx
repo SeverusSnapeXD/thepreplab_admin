@@ -8,7 +8,7 @@ import Contact from "./Component/Contact";
 import Message from "./Component/Message";
 
 import { List, Divider, TextField } from "@material-ui/core";
-
+import "./Chat.css";
 import sendIcon from "./Assets/send.svg";
 const primaryColor = "#2196f3";
 
@@ -184,6 +184,7 @@ class Chat extends Component {
     let currentTime = null;
 
     return (
+      
       <section className={classes.container}>
         <div
           className={classes.contacts}
@@ -191,8 +192,9 @@ class Chat extends Component {
             width: `${chatStyles ? chatStyles.contactsColWidth : ""}`
           }}
         >
+          <div className="Main">
           {contactsFilterField ? (
-            <div className={classes.contactsFilterContainer}>
+            <div className={classes.contactsFilterContainer} >
               <TextField
                 fullWidth
                 value={contactsFilter}
@@ -200,7 +202,7 @@ class Chat extends Component {
                 onChange={e => this.onContactsFilterChange(e.target.value)}
               />
             </div>
-          ) : null}
+          ) : null}</div>
 
           <List className={classes.contactsList}>
             {contacts.map((contact, contactIndex) => {
@@ -322,6 +324,7 @@ class Chat extends Component {
           </div>
         </div>
       </section>
+      
     );
   }
 }

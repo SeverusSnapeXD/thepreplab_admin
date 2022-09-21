@@ -167,6 +167,7 @@ const [formImge, setFormImge] = useState([
   return (
     <div className="MainDiv">
         <h1>Explore</h1>
+        <center>
         <form onSubmit={handleSubmit} id="create-course-form">
             <table>
                 <tr className="spaceUnder">
@@ -400,6 +401,7 @@ const [formImge, setFormImge] = useState([
             <Button variant="outlined" onClick={handleReset}>Clear</Button>
             </div>
         </form>
+        </center>
     </div>
   )
 }

@@ -61,6 +61,7 @@ function Posts() {
   return (
     <div className="MainDiv">
         <h1>Add Posts</h1>
+        <center>
         <form onSubmit={handleSubmit}
             id="create-course-form">
             <table>
@@ -119,7 +120,7 @@ function Posts() {
                     <Button variant="outlined" onClick={handleReset}>Clear</Button>
                 </div>
         </form>
-           
+        </center>
     </div>
   )
 }

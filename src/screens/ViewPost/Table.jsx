@@ -35,6 +35,8 @@ const TableD = ({ data, rowsPerPage }) => {
     });
 };
 
+
+
   return (
     <div className="MainDiv">
         <h1>View Posts</h1>

@@ -122,6 +122,7 @@ const removeNut = (index) => {
   return (
     <div className="MainDiv">
       <h1>Add Food</h1>
+      <center>
       <form onSubmit={handleSubmit}
     id="create-course-form">
         <table>
@@ -375,6 +376,7 @@ const removeNut = (index) => {
         
 
     </form>
+    </center>
     </div>
   )
 }
