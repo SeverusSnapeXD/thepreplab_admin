@@ -67,6 +67,11 @@ export const SidebarData = [
         path: '/events'
     },
     {
+        icon: UilEye,
+        heading: "View Events",
+        path: '/viewevents'
+    },
+    {
         icon: UilClipboardAlt,
         heading: "Orders",
         path: '/orders'

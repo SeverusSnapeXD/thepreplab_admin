@@ -7,6 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./Order.css";
+import { Link } from "react-router-dom";
 
 function createData(orderId, userName, orderPlace, date, status) {
   return { orderId, userName, orderPlace, date, status };
@@ -80,7 +81,7 @@ export default function BasicTable() {
                   <TableCell align="left">
                     <span className="status" style={makeStyle(row.status)}>{row.status}</span>
                   </TableCell>
-                  <TableCell align="left" className="Details">Details</TableCell>
+                  <TableCell align="left" className="Details"><Link to="/orderdetails">Details</Link></TableCell>
                 </TableRow>
               ))}
             </TableBody>

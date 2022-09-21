@@ -6,6 +6,12 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Input, InputLabel, MenuItem, Select, FormControl, IconButton} from "@mui/material";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 
 function Posts() {
 
@@ -61,13 +67,13 @@ function Posts() {
   return (
     <div className="MainDiv">
         <h1>Add Posts</h1>
-        <center>
+        
         <form onSubmit={handleSubmit}
             id="create-course-form">
-            <table>
-                <tr className="spaceUnder">
+            <Table>
+                <TableRow className="spaceUnder">
            
-                    <td className="td">
+                    <TableCell className="td">
                         <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <TextField
                                 name="email"
@@ -77,8 +83,8 @@ function Posts() {
                                 
                             />
                         </FormControl>
-                    </td>
-                    <td className="td">
+                    </TableCell>
+                    <TableCell className="td">
                         <FormControl sx={{ m: 0, minWidth: 250 }}>
                             <TextField
                                 name="caption"
@@ -88,13 +94,13 @@ function Posts() {
                                 
                             />
                         </FormControl>
-                    </td>
-                </tr>
-                <tr>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
                     <h3>Add Images / Videos <AddCircleIcon variant="outlined" color="secondary" onClick={addImg}/></h3>
-                </tr>
-                <tr className="spaceUnder">
-                    <td colSpan={'2'}>
+                </TableRow>
+                <TableRow className="spaceUnder">
+                    <TableCell colSpan={'2'}>
                         {formImg.map((form, index) => {
                             return(
                                 <div key={index}>
@@ -110,9 +116,9 @@ function Posts() {
                                 </div>
                             )
                         })}
-                    </td>
-                </tr>
-            </table>
+                    </TableCell>
+                </TableRow>
+            </Table>
                 <br/>
                 <div className="spaceBtn">
                     <Button variant="outlined" color="success" type="submit">Save</Button>
@@ -120,7 +126,7 @@ function Posts() {
                     <Button variant="outlined" onClick={handleReset}>Clear</Button>
                 </div>
         </form>
-        </center>
+        
     </div>
   )
 }

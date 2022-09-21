@@ -11,6 +11,9 @@ import MainChat from './screens/Chat/MainChat';
 import ViewPost from './screens/ViewPost/MainTable';
 import Login from './components/Login/Login';
 import Order from './screens/Order/Order';
+import OrderDetails from './screens/OrderDetails/OrderDetails';
+import Events from './screens/Events/Events';
+import ViewEvents from './screens/ViewEvents/MainTable';
 function App() {
 
   const [logged , setLogged] = React.useState(false);
@@ -21,13 +24,14 @@ function App() {
 
   return (
     <div className="App">
+      {/* {
+            logged ? */}
         <div className="AppGlass">
-          {
-            logged ?
-            <HomeStack /> :
-            <Login onPress={handleLogin} /> 
-          }
+          <HomeStack /> 
         </div>
+      {/* //   :
+      //   <Login onPress={handleLogin} />
+      // } */}
     </div>
   );
 }
@@ -47,6 +51,9 @@ const HomeStack = () => {
             <Route path='/chat' element={<MainChat/>} />
             <Route path='/viewposts' element={ <ViewPost/>} />
             <Route path='/orders' element={<Order/>} />
+            <Route path='/orderdetails' element={<OrderDetails/>} />
+            <Route path='/events' element={<Events/>} />
+            <Route path='viewevents' element={<ViewEvents/>} />
           </Routes>
           </BrowserRouter>
   )

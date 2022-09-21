@@ -5,6 +5,12 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Input, InputLabel, MenuItem, Select, FormControl, IconButton} from "@mui/material";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 
 function AddFood() {
 
@@ -122,13 +128,13 @@ const removeNut = (index) => {
   return (
     <div className="MainDiv">
       <h1>Add Food</h1>
-      <center>
+      
       <form onSubmit={handleSubmit}
     id="create-course-form">
-        <table>
-        <tr className="spaceUnder">
+        <Table>
+        <TableRow className="spaceUnder">
            
-           <td className="td">
+           <TableCell className="td">
            <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
@@ -139,9 +145,9 @@ const removeNut = (index) => {
               
            />
            </FormControl>
-           </td>
+           </TableCell>
 
-           <td className="td" >
+           <TableCell className="td" >
           <FormControl sx={{ m: 0, maxWidth: 250 }}>
             <TextField
             // label="Food Image"
@@ -151,13 +157,13 @@ const removeNut = (index) => {
             onChange={handleChange}
             />
             </FormControl>
-          </td>
+          </TableCell>
            
  
-        </tr>
+        </TableRow>
 
-        <tr className="spaceUnder" >
-        <td className="td" rowSpan={'2'}>
+        <TableRow className="spaceUnder" >
+        <TableCell className="td" rowSpan={'2'}>
            <FormControl sx={{ m: 0, minWidth: 250 }}>
            <TextField
               id="outlined-multiline-static"
@@ -169,9 +175,9 @@ const removeNut = (index) => {
              onChange={handleChange}
             />
             </FormControl>
-           </td>
+           </TableCell>
           
-           <td className="td">
+           <TableCell className="td">
 
             <FormControl sx={{ m: 0, minWidth: 250 }}>
               <TextField
@@ -182,15 +188,15 @@ const removeNut = (index) => {
               onChange={handleChange}
             />
             </FormControl>
-            </td>
-        </tr>
+            </TableCell>
+        </TableRow>
 
-        <tr className="spaceUnder">
+        <TableRow className="spaceUnder">
            
           
         
           
-           <td className="td" >
+           <TableCell className="td" >
            <FormControl sx={{ m: 0, minWidth: 250 }}>
            <InputLabel id="demo-simple-select-helper-label">Food Type</InputLabel>
             <Select
@@ -208,11 +214,11 @@ const removeNut = (index) => {
               <MenuItem value={'3'}>Thirty</MenuItem>
             </Select>
             </FormControl>
-           </td>
-           </tr>
+           </TableCell>
+           </TableRow>
 
-          <tr className="spaceUnder">
-           <td className="td">
+          <TableRow className="spaceUnder">
+           <TableCell className="td">
            <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
@@ -222,9 +228,9 @@ const removeNut = (index) => {
              onChange={handleChange}
            />
            </FormControl>
-           </td>
+           </TableCell>
           
-           <td className="td">
+           <TableCell className="td">
            <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
@@ -234,14 +240,14 @@ const removeNut = (index) => {
              onChange={handleChange}
            />
            </FormControl>
-           </td>
-        </tr>
-        <tr>
+           </TableCell>
+        </TableRow>
+        <TableRow>
           <h3>Tags <AddCircleIcon variant="outlined" color="secondary" onClick={addFields}/></h3>
           
-        </tr>
-        <tr >
-          <td colSpan={'2'}>
+        </TableRow>
+        <TableRow >
+          <TableCell colSpan={'2'}>
           {formFields.map((form, index) => {
           return (
           <div key={index}>
@@ -287,11 +293,13 @@ const removeNut = (index) => {
           
           
           
-          </td>
-        </tr>
-          <tr><h3>Ingredients <AddCircleIcon variant="outlined" color="secondary" onClick={addIngr}/></h3></tr>
-        <tr>
-          <td colSpan={'2'}>
+          </TableCell>
+        </TableRow>
+          <TableRow>
+            <h3>Ingredients <AddCircleIcon variant="outlined" color="secondary" onClick={addIngr}/></h3>
+          </TableRow>
+        <TableRow>
+          <TableCell colSpan={'2'}>
             {formIngr.map((form, index) => {
             return (
             <div key={index}>
@@ -319,12 +327,14 @@ const removeNut = (index) => {
             </div>
               )
             })} 
-          </td>
+          </TableCell>
           
-        </tr>
-        <tr><h3>Nutritions <AddCircleIcon variant="outlined" color="secondary" onClick={addNut}/></h3></tr>
-        <tr>
-            <td colSpan={'2'}>
+        </TableRow>
+        <TableRow>
+          <h3>Nutritions <AddCircleIcon variant="outlined" color="secondary" onClick={addNut}/></h3>
+        </TableRow>
+        <TableRow>
+            <TableCell colSpan={'2'}>
               {formNut.map((form, index) => {
               return (
               <div key={index}>
@@ -361,11 +371,11 @@ const removeNut = (index) => {
               </div>
               )
               })} 
-            </td>
+            </TableCell>
             
-        </tr>
-        <tr className="spaceUnder"></tr>
-        </table>
+        </TableRow>
+        <TableRow className="spaceUnder"></TableRow>
+        </Table>
         <br/>
         <div className="spaceBtn">
           <Button variant="outlined" color="success" type="submit">Save</Button>
@@ -376,7 +386,7 @@ const removeNut = (index) => {
         
 
     </form>
-    </center>
+    
     </div>
   )
 }
