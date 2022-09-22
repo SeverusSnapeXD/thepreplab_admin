@@ -14,6 +14,14 @@ import Order from './screens/Order/Order';
 import OrderDetails from './screens/OrderDetails/OrderDetails';
 import Events from './screens/Events/Events';
 import ViewEvents from './screens/ViewEvents/MainTable';
+import Users from './screens/Users/Users';
+import UsersDetails from './screens/UsersDetails/UsersDetails';
+import Stories from './screens/Stories/Stories';
+import ViewStories from './screens/ViewStories/MainTable';
+import Notifications from './screens/Notifications/Notifications';
+import ViewNotifications from './screens/ViewNotifications/MainTable';
+import Channels from './screens/Channels/Channels';
+import ViewChannels from './screens/ViewChannels/MainTable';
 function App() {
 
   const [logged , setLogged] = React.useState(false);
@@ -53,7 +61,15 @@ const HomeStack = () => {
             <Route path='/orders' element={<Order/>} />
             <Route path='/orderdetails' element={<OrderDetails/>} />
             <Route path='/events' element={<Events/>} />
-            <Route path='viewevents' element={<ViewEvents/>} />
+            <Route path='/viewevents' element={<ViewEvents/>} />
+            <Route path='/users' element={<Users/>} />
+            <Route path='/userdetails' element={<UsersDetails/>} />
+            <Route path='/stories' element={<Stories/>} />
+            <Route path='/viewstories' element={<ViewStories/>} />
+            <Route path='/notifications' element={<Notifications/>} />
+            <Route path='/viewnotifications' element={<ViewNotifications/>} />
+            <Route path='/channels' element={<Channels/>} />
+            <Route path='/viewchannels' element={<ViewChannels/>} />
           </Routes>
           </BrowserRouter>
   )

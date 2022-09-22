@@ -39,7 +39,7 @@ const TableD = ({ data, rowsPerPage }) => {
 
   return (
     <div className="MainDiv">
-        <h1>View Events</h1>
+        <h1>View Channels</h1>
         <center>
         <FormControl sx={{ m: 0, maxWidth: 700 }}>
         <TextField
@@ -57,7 +57,7 @@ const TableD = ({ data, rowsPerPage }) => {
         </FormControl>
         </center>
         <div>
-        <Link to="/events">
+        <Link to="/channels">
         
         <AddCircleIcon variant="outlined" color="secondary" />
       </Link>
@@ -76,10 +76,8 @@ const TableD = ({ data, rowsPerPage }) => {
         <TableHead >
           <TableRow>
             <TableCell></TableCell>
-            <TableCell >Title</TableCell>
-            <TableCell >Description</TableCell>
-            <TableCell >Date</TableCell>
-            <TableCell>Report</TableCell>
+            <TableCell >Channel Name</TableCell>
+            <TableCell >No of Videos</TableCell>
             <TableCell>Action</TableCell>
           </TableRow>
         </TableHead>
@@ -89,8 +87,6 @@ const TableD = ({ data, rowsPerPage }) => {
                 <TableCell><Checkbox/></TableCell>
               <TableCell >{el.name}</TableCell>
               <TableCell >{el.capital}</TableCell>
-              <TableCell >{el.language}</TableCell>
-              <TableCell >{el.name}</TableCell>
               <TableCell>
             <Link to={`edit/`}>
                 <EditIcon color="primary"/>
@@ -98,7 +94,7 @@ const TableD = ({ data, rowsPerPage }) => {
                 <div className="btsp"></div>
                 <DeleteIcon  variant="outlined" color="error" onClick={() => deleteByIds()}/>
             </TableCell>
-            <TableCell><PhotoCameraIcon/></TableCell>
+            {/* <TableCell><PhotoCameraIcon/></TableCell> */}
             </TableRow>
           ))}
         </TableBody>
