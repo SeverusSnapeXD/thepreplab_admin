@@ -31,15 +31,18 @@ function App() {
   }
 
   return (
+     <div> 
+      {/* <Login/> */}
     <div className="App">
-      {/* {
-            logged ? */}
+       {
+            logged ?
         <div className="AppGlass">
           <HomeStack /> 
         </div>
-      {/* //   :
-      //   <Login onPress={handleLogin} />
-      // } */}
+          :
+         <Login onPress={handleLogin} />
+       }
+    </div>
     </div>
   );
 }

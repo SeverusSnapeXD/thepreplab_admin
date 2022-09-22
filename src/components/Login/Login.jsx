@@ -3,7 +3,12 @@ import { Button, TextField } from "@mui/material";
 import React from "react";
 import './Login.css';
 import { Link } from "react-router-dom";
-
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 import image from "../../imgs/background.png";
 
 
@@ -25,14 +30,16 @@ const Login = (props) => {
             alert("Username or Password is Wrong...!");
         }
     }
-
+ 
     return (
         // <div className="art">
         <div >
                 <div className="fontname"><center>Login To Admin Page</center></div>
-                <div class="row">
+                {/* <div class="row"> */}
+                <Table>
 
-
+                    <TableRow>
+                        <TableCell width={'20%'}>
                     <div class="col-sm-5">
                         <div className="Img">
 
@@ -40,10 +47,11 @@ const Login = (props) => {
                             </div>
                         </div>
                     </div>
-
+                        </TableCell>
+                        <TableCell>
                     {/* table */}
                     <div class="col-sm-4" >
-                        <center>
+                        
 
 
                             <form onSubmit={loginTo} className="al">
@@ -81,7 +89,8 @@ const Login = (props) => {
                                     <center>
                                         <Button
                                             size="large"
-                                            fullWidth={true}
+                                            // fullWidth={true}
+                                            style={{maxWidth: '500px', maxHeight: '50px', minWidth: '100px', minHeight: '50px'}}
                                             type="submit"
                                             color="inherit"
                                         >Login</Button>
@@ -91,9 +100,12 @@ const Login = (props) => {
 
 
                             </form>
-                        </center>
+                        
                     </div>
-                </div>
+                    </TableCell>
+                    </TableRow>
+                {/* </div> */}
+                </Table>
         </div>
     );
 
