@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thepreplab_admin/static/css/main.42c4ccc5.css",
+    "main.js": "/thepreplab_admin/static/js/main.44719a22.js",
+    "static/media/background.png": "/thepreplab_admin/static/media/background.61d102983fe68b60cda3.png",
+    "index.html": "/thepreplab_admin/index.html",
+    "static/media/send.svg": "/thepreplab_admin/static/media/send.f4824933ab8698ca093527572efa0972.svg",
+    "main.42c4ccc5.css.map": "/thepreplab_admin/static/css/main.42c4ccc5.css.map",
+    "main.44719a22.js.map": "/thepreplab_admin/static/js/main.44719a22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42c4ccc5.css",
+    "static/js/main.44719a22.js"
+  ]
+}
