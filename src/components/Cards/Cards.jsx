@@ -9,7 +9,7 @@ function Cards() {
     <div className="Cards">
         {CardsData.map((card, id)=>{
             return(
-                <div className="parentContainer">
+                <div className="parentContainer" key={id}>
                     <Card
                     title={card.title}
                     color={card.color}

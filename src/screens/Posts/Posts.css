@@ -20,13 +20,11 @@ tr.spaceUnder>td {
       };
 
 .spaceBtn{
-        padding: 4rem;
-    }
-    
-.btsp{
-        width: 5px;
-      height: auto;
-      display: inline-block;
-    }
+    padding: 4rem;
+}
 
-    .MuiTableCell-root{border-bottom: none}
+.btsp{
+    width: 5px;
+  height: auto;
+  display: inline-block;
+}

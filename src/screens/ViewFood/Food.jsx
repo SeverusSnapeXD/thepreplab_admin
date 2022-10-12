@@ -14,6 +14,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Checkbox from '@mui/material/Checkbox';
 import EditIcon from '@mui/icons-material/Edit';
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from '@mui/icons-material/Search';
+import TextField from '@mui/material/TextField';
+import {FormControl} from "@mui/material";
 
 function Food(props) {
   const [stateFood, setFoodState] = useState([]);
@@ -59,7 +64,26 @@ function Food(props) {
   };
 
   return (
+    
     <div>
+      <div>
+      <center>
+        <FormControl sx={{ m: 0, maxWidth: 700 }}>
+        <TextField
+            label="Search"
+            InputProps={{
+                endAdornment: (
+                <InputAdornment>
+                    <IconButton>
+                    <SearchIcon />
+                    </IconButton>
+                </InputAdornment>
+                )
+            }}
+        />
+        </FormControl>
+        </center>
+      </div>
       <Link to="/addfood">
         
         <AddCircleIcon variant="outlined" color="secondary" />

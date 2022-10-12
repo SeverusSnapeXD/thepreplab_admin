@@ -47,9 +47,19 @@ export const SidebarData = [
         path: '/posts'
     },
     {
+        icon: UilEye,
+        heading: "View Posts",
+        path: '/viewposts'
+    },
+    {
         icon: UilNewspaper,
         heading: "Stories",
         path: '/stories'
+    },
+    {
+        icon: UilEye,
+        heading: "View Stories",
+        path: '/viewstories'
     },
     {
         icon: UilChannel,
@@ -57,9 +67,19 @@ export const SidebarData = [
         path: '/channels'
     },
     {
+        icon: UilEye,
+        heading: "View Channels",
+        path: '/viewchannels'
+    },
+    {
         icon: UilFileCheck,
         heading: "Events",
         path: '/events'
+    },
+    {
+        icon: UilEye,
+        heading: "View Events",
+        path: '/viewevents'
     },
     {
         icon: UilClipboardAlt,
@@ -73,8 +93,13 @@ export const SidebarData = [
     },
     {
         icon: UilBell,
-        heading: "Notifications",
+        heading: "Add Notifications",
         path: '/notifications'
+    },
+    {
+        icon: UilEye,
+        heading: "Notifications",
+        path: '/viewnotifications'
     },
     {
         icon: UilHipchat,

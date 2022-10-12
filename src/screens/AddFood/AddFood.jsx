@@ -5,6 +5,12 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Input, InputLabel, MenuItem, Select, FormControl, IconButton} from "@mui/material";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 import { Api } from '../../backend/api';
 
 function AddFood() {
@@ -125,12 +131,14 @@ const removeNut = (index) => {
   return (
     <div className="MainDiv">
       <h1>Add Food</h1>
+      
       <form onSubmit={handleSubmit}
     id="create-course-form">
-        <table>
-        <tr className="spaceUnder">
+        <Table>
+        <TableRow className="spaceUnder">
            
-           <td className="td">
+           <TableCell className="td">
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
              name="Name"
@@ -139,9 +147,27 @@ const removeNut = (index) => {
              onChange={handleChange}
               
            />
-           </td>
+           </FormControl>
+           </TableCell>
+
+           <TableCell className="td" >
+          <FormControl sx={{ m: 0, maxWidth: 250 }}>
+            <TextField
+            // label="Food Image"
+            name="FoodImage"
+            type="file"
+            value={formValue.FoodImage}
+            onChange={handleChange}
+            />
+            </FormControl>
+          </TableCell>
+           
  
-           <td className="td" rowSpan={'2'}>
+        </TableRow>
+
+        <TableRow className="spaceUnder" >
+        <TableCell className="td" rowSpan={'2'}>
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
            <TextField
               id="outlined-multiline-static"
               label="Description"
@@ -151,39 +177,30 @@ const removeNut = (index) => {
               value={formValue.Description}
              onChange={handleChange}
             />
-           </td>
- 
-        </tr>
+            </FormControl>
+           </TableCell>
+          
+           <TableCell className="td">
 
-        <tr className="spaceUnder" >
-          <td className="td" >
-            <TextField
-            // label="Food Image"
-            name="FoodImage"
-            type="file"
-            value={formValue.FoodImage}
-            onChange={handleChange}
+            <FormControl sx={{ m: 0, minWidth: 250 }}>
+              <TextField
+              
+              name="Price"
+              label="Price"
+              value={formValue.Price}
+              onChange={handleChange}
             />
-            
-          </td>
-          
-        </tr>
+            </FormControl>
+            </TableCell>
+        </TableRow>
 
-        <tr className="spaceUnder">
+        <TableRow className="spaceUnder">
            
-          <td className="td">
-             <TextField
-             
-             name="Price"
-             label="Price"
-             value={formValue.Price}
-             onChange={handleChange}
-           />
-           </td>
-
           
-           <td className="td" >
-           <FormControl sx={{ m: 0, minWidth: 150 }}>
+        
+          
+           <TableCell className="td" >
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
            <InputLabel id="demo-simple-select-helper-label">Food Type</InputLabel>
             <Select
               label="Food Type"
@@ -200,11 +217,12 @@ const removeNut = (index) => {
               <MenuItem value={'3'}>Thirty</MenuItem>
             </Select>
             </FormControl>
-           </td>
-           </tr>
+           </TableCell>
+           </TableRow>
 
-          <tr className="spaceUnder">
-           <td className="td">
+          <TableRow className="spaceUnder">
+           <TableCell className="td">
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
              name="WeekNumber"
@@ -212,9 +230,11 @@ const removeNut = (index) => {
              value={formValue.WeekNumber}
              onChange={handleChange}
            />
-           </td>
+           </FormControl>
+           </TableCell>
           
-           <td className="td">
+           <TableCell className="td">
+           <FormControl sx={{ m: 0, minWidth: 250 }}>
              <TextField
              
              name="ItemQuantity"
@@ -222,17 +242,19 @@ const removeNut = (index) => {
              value={formValue.ItemQuantity}
              onChange={handleChange}
            />
-           </td>
-        </tr>
-        <tr>
+           </FormControl>
+           </TableCell>
+        </TableRow>
+        <TableRow>
           <h3>Tags <AddCircleIcon variant="outlined" color="secondary" onClick={addFields}/></h3>
           
-        </tr>
-        <tr >
-          <td colSpan={'2'}>
+        </TableRow>
+        <TableRow >
+          <TableCell colSpan={'2'}>
           {formFields.map((form, index) => {
           return (
           <div key={index}>
+            <FormControl sx={{ m: 0, minWidth: 250 }}>
               <TextField
                 name='tags'
                 label="Tags"
@@ -240,8 +262,9 @@ const removeNut = (index) => {
                 onChange={event => handleFormChange(event, index)}
                 value={form.tags}
               />
+              </FormControl>
               
-              <FormControl sx={{ m: 0, minWidth: 150 }}>
+              <FormControl sx={{ m: 0, minWidth: 250 }}>
            <InputLabel id="demo-simple-select-helper-label">Colors</InputLabel>
             <Select
               label="Colors"
@@ -273,15 +296,18 @@ const removeNut = (index) => {
           
           
           
-          </td>
-        </tr>
-          <tr><h3>Ingredients <AddCircleIcon variant="outlined" color="secondary" onClick={addIngr}/></h3></tr>
-        <tr>
-          <td colSpan={'2'}>
+          </TableCell>
+        </TableRow>
+          <TableRow>
+            <h3>Ingredients <AddCircleIcon variant="outlined" color="secondary" onClick={addIngr}/></h3>
+          </TableRow>
+        <TableRow>
+          <TableCell colSpan={'2'}>
             {formIngr.map((form, index) => {
             return (
             <div key={index}>
 
+              <FormControl sx={{ m: 0, minWidth: 250 }}>
                 <TextField
                   name='Ingredients'
                   label="Ingredients"
@@ -289,6 +315,9 @@ const removeNut = (index) => {
                   onChange={event => handleFormChangeIngr(event, index)}
                   value={formIngr.Ingredients}
                 />
+                </FormControl>
+
+                <FormControl sx={{ m: 0, maxWidth: 250 }}>
                 <TextField
                 // label="Ingredient Image"
                 name="IngImg"
@@ -296,22 +325,24 @@ const removeNut = (index) => {
                 value={formIngr.IngImg}
                 onChange={event => handleFormChangeIngr(event, index)}
                 />
-                
+                </FormControl>
                 <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeIngr(index)}/>
             </div>
               )
             })} 
-          </td>
+          </TableCell>
           
-        </tr>
-        <tr><h3>Nutritions <AddCircleIcon variant="outlined" color="secondary" onClick={addNut}/></h3></tr>
-        <tr>
-            <td colSpan={'2'}>
+        </TableRow>
+        <TableRow>
+          <h3>Nutritions <AddCircleIcon variant="outlined" color="secondary" onClick={addNut}/></h3>
+        </TableRow>
+        <TableRow>
+            <TableCell colSpan={'2'}>
               {formNut.map((form, index) => {
               return (
               <div key={index}>
 
-                <FormControl sx={{ m: 0, minWidth: 150 }}>
+                <FormControl sx={{ m: 0, minWidth: 250 }}>
                   <InputLabel id="demo-simple-select-helper-label">Nutritions</InputLabel>
                   <Select
                     label="Nutritions"
@@ -329,6 +360,7 @@ const removeNut = (index) => {
                   </Select>
                 </FormControl>
 
+                <FormControl sx={{ m: 0, minWidth: 250 }}>
                 <TextField
                   name='Value'
                   label="Value"
@@ -336,16 +368,17 @@ const removeNut = (index) => {
                   onChange={event => handleFormChangeNut(event, index)}
                   value={formIngr.Ingredients}
                 />
+                </FormControl>
 
                 <DeleteIcon sx={{m:1.5}} variant="outlined" color="error" onClick={() => removeNut(index)}/>
               </div>
               )
               })} 
-            </td>
+            </TableCell>
             
-        </tr>
-        <tr className="spaceUnder"></tr>
-        </table>
+        </TableRow>
+        <TableRow className="spaceUnder"></TableRow>
+        </Table>
         <br/>
         <div className="spaceBtn">
           <Button variant="outlined" color="success" type="submit">Save</Button>
@@ -356,6 +389,7 @@ const removeNut = (index) => {
         
 
     </form>
+    
     </div>
   )
 }
