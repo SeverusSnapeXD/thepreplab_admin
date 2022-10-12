@@ -2,7 +2,7 @@ import './App.css'
 import React from 'react';
 import MainDash from './components/MainDash/MainDash';
 import Sidebar from './components/Sidebar/Sidebar';
-import {BrowserRouter,Route , Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AddFood from './screens/AddFood/AddFood';
 import Explore from './screens/Explore/Explore';
 import ViewFood from './screens/ViewFood/ViewFood';
@@ -22,58 +22,86 @@ import Notifications from './screens/Notifications/Notifications';
 import ViewNotifications from './screens/ViewNotifications/MainTable';
 import Channels from './screens/Channels/Channels';
 import ViewChannels from './screens/ViewChannels/MainTable';
+import { useContext } from 'react';
+import ContextProvider , { UserContext }  from './context/UserContext';
+import { useEffect } from 'react';
+import { getData, StoreData } from './helper/LocalStorage';
+
 function App() {
 
-  const [logged , setLogged] = React.useState(false);
+  // const [logged , setLogged] = React.useState(false);
 
-  const handleLogin = () => {
-    setLogged(true);
-  }
+  // const handleLogin = () => {
+  //   setLogged(true);
+  // }
 
   return (
-     <div> 
-      {/* <Login/> */}
-    <div className="App">
-       {
-            logged ?
-        <div className="AppGlass">
-          <HomeStack /> 
-        </div>
-          :
-         <Login onPress={handleLogin} />
-       }
-    </div>
-    </div>
+    <ContextProvider>
+      <AppNav />
+    </ContextProvider>
   );
 }
 
 export default App;
 
+
+const AppNav = () => {
+
+  const { isLogged } = useContext(UserContext);
+  // useEffect(()=>{
+  //   if(isLogged){
+  //     StoreData('logged','true');
+  //   }
+  //   else{
+  //     getd();
+  //   }
+  // },[isLogged])
+  
+  // const getd = async () => {
+  //   console.log(await getData('logged'));
+  // }
+  
+  return (
+    <div>
+      <div className="App">
+        {
+          isLogged ?
+            <div className="AppGlass">
+              <HomeStack />
+            </div>
+            :
+            <Login />
+        }
+      </div>
+    </div>
+  )
+}
+
 const HomeStack = () => {
-  return(
-<BrowserRouter>
-          <Sidebar/> 
-          <Routes>
-            <Route path='/' element={ <MainDash/>} />
-            <Route path='/addfood' element={ <AddFood/>} />
-            <Route path='/explore' element={<Explore/>} />
-            <Route path='/viewfood' element={<ViewFood/>} />
-            <Route path='/posts' element={<Posts/>} />
-            <Route path='/chat' element={<MainChat/>} />
-            <Route path='/viewposts' element={ <ViewPost/>} />
-            <Route path='/orders' element={<Order/>} />
-            <Route path='/orderdetails' element={<OrderDetails/>} />
-            <Route path='/events' element={<Events/>} />
-            <Route path='/viewevents' element={<ViewEvents/>} />
-            <Route path='/users' element={<Users/>} />
-            <Route path='/userdetails' element={<UsersDetails/>} />
-            <Route path='/stories' element={<Stories/>} />
-            <Route path='/viewstories' element={<ViewStories/>} />
-            <Route path='/notifications' element={<Notifications/>} />
-            <Route path='/viewnotifications' element={<ViewNotifications/>} />
-            <Route path='/channels' element={<Channels/>} />
-            <Route path='/viewchannels' element={<ViewChannels/>} />
-          </Routes>
-          </BrowserRouter>
+  return (
+    <BrowserRouter>
+      <Sidebar />
+      <Routes>
+        <Route path='/' element={<MainDash />} />
+        <Route path='/addfood' element={<AddFood />} />
+        <Route path='/explore' element={<Explore />} />
+        <Route path='/viewfood' element={<ViewFood />} />
+        <Route path='/posts' element={<Posts />} />
+        <Route path='/chat' element={<MainChat />} />
+        <Route path='/viewposts' element={<ViewPost />} />
+        <Route path='/orders' element={<Order />} />
+        <Route path='/orderdetails' element={<OrderDetails />} />
+        <Route path='/events' element={<Events />} />
+        <Route path='/viewevents' element={<ViewEvents />} />
+        <Route path='/users' element={<Users />} />
+        <Route path='/userdetails' element={<UsersDetails />} />
+        <Route path='/stories' element={<Stories />} />
+        <Route path='/viewstories' element={<ViewStories />} />
+        <Route path='/notifications' element={<Notifications />} />
+        <Route path='/viewnotifications' element={<ViewNotifications />} />
+        <Route path='/channels' element={<Channels />} />
+        <Route path='/viewchannels' element={<ViewChannels />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

@@ -7,6 +7,9 @@ import {UilSignOutAlt} from '@iconscout/react-unicons';
 
 import './Sidebar.css'
 import { useState } from 'react';
+import { Button } from '@mui/material';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 const Sidebar = () => {
 
@@ -17,6 +20,14 @@ const Sidebar = () => {
         setSelected(i);
         navigate(item.path)
         console.log('Iettm  ',item)
+    }
+
+    const {logout} = useContext(UserContext);
+
+    const signOut = async () => {
+        await logout();
+        console.log('Loggd out')
+        // navigate('/login')
     }
 
 
@@ -48,7 +59,9 @@ const Sidebar = () => {
             })}
 
             <div className="menuItem">
-                <UilSignOutAlt/>
+                <Button onClick={signOut}>
+                <UilSignOutAlt />
+                </Button>
             </div>
         </div>
     </div>

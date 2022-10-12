@@ -10,25 +10,33 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import image from "../../imgs/background.png";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 
-const Login = (props) => {
+const Login = ({onPress}) => {
 
-    const [login, toLog] = React.useState(false);
+    // const [login, toLog] = React.useState(false);
     const [username, SetUsername] = React.useState([]);
     const [password, SetPassword] = React.useState([]);
 
-    const loginTo = (event) => {
+    const {login, isLogged} = useContext(UserContext);
+
+    console.log('isLogged ',isLogged);
+
+    const loginTo = async (event) => {
         event.preventDefault();
-        if (username === "hexa" && password === "#HexamTeam99") {
-            toLog(true);
-            console.log("submitted");
-            props.changeState(true);
+        await login();
+        // setIsLogged(true);
+        // if (username === "hexa" && password === "#HexamTeam99") {
+        //     toLog(true);
+        //     console.log("submitted");
+        //     // props.changeState(true);
 
 
-        } else {
-            alert("Username or Password is Wrong...!");
-        }
+        // } else {
+        //     alert("Username or Password is Wrong...!");
+        // }
     }
  
     return (
