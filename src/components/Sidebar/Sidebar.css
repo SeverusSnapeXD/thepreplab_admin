@@ -39,7 +39,7 @@
 .menuItem{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    /* gap: 1rem; */
     height: 2.5rem;
     margin-left: 2rem;
     position: relative;
@@ -52,10 +52,16 @@
     cursor: pointer;
 }
 
-.active{
+.active {
     background: var(--activeItem);
     margin-left: 0;
 }
+
+.subMenuContainer {
+    /* display: none; */
+}
+
+  
 
 .active::before{
     content: '';

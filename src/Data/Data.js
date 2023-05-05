@@ -28,88 +28,54 @@ export const SidebarData = [
     },
     {
         icon: UilPizzaSlice,
-        heading: "Foods",
-        path: '/addfood'
+        heading: "Courses",
+        path: '/courses',
+        subMenu: [
+            {
+                icon: UilPizzaSlice,
+        heading: "Course",
+        path: '/course',
+            },
+            {
+                icon: UilEye,
+        heading: "Add Course",
+        path: '/addcourse'
+            },
+            {
+                icon: UilEye,
+        heading: "Edit Course",
+        path: '/editcourse'
+            },
+        ]
     },
     {
         icon: UilEye,
-        heading: "View Foods",
-        path: '/viewfood'
+        heading: "Students",
+        path: '/students',
+        subMenu: [
+            {
+                icon: UilPizzaSlice,
+        heading: "Student",
+        path: '/student',
+            },
+        ]
     },
     {
         icon: UilSearchAlt,
-        heading: "Explore",
+        heading: "Payments",
         path: '/explore'
     },
     {
         icon: UilClapperBoard,
-        heading: "Posts",
-        path: '/posts'
-    },
-    {
-        icon: UilEye,
-        heading: "View Posts",
-        path: '/viewposts'
-    },
-    {
-        icon: UilNewspaper,
-        heading: "Stories",
-        path: '/stories'
-    },
-    {
-        icon: UilEye,
-        heading: "View Stories",
-        path: '/viewstories'
-    },
-    {
-        icon: UilChannel,
-        heading: "Channels",
-        path: '/channels'
-    },
-    {
-        icon: UilEye,
-        heading: "View Channels",
-        path: '/viewchannels'
-    },
-    {
-        icon: UilFileCheck,
-        heading: "Events",
-        path: '/events'
-    },
-    {
-        icon: UilEye,
-        heading: "View Events",
-        path: '/viewevents'
-    },
-    {
-        icon: UilClipboardAlt,
-        heading: "Orders",
-        path: '/orders'
-    },
-    {
-        icon: UilUsersAlt,
-        heading: "Users",
-        path: '/users'
-    },
-    {
-        icon: UilBell,
-        heading: "Add Notifications",
-        path: '/notifications'
-    },
-    {
-        icon: UilEye,
-        heading: "Notifications",
-        path: '/viewnotifications'
-    },
-    {
-        icon: UilHipchat,
-        heading: "Chat",
-        path: '/chat'
-    },
-    {
-        icon: UilUserCircle,
-        heading: "Account",
-        path: '/account'
+        heading: "Profile",
+        path: '/profile',
+        subMenu: [
+            {
+                icon: UilPizzaSlice,
+        heading: "Edit profile",
+        path: '/editprofile',
+            },
+        ]
     },
 ];
 

@@ -26,6 +26,7 @@ import { useContext } from 'react';
 import ContextProvider , { UserContext }  from './context/UserContext';
 import { useEffect } from 'react';
 import { getData, StoreData } from './helper/LocalStorage';
+import ROUTES from './routes';
 
 function App() {
 
@@ -82,7 +83,10 @@ const HomeStack = () => {
     <BrowserRouter>
       <Sidebar />
       <Routes>
-        <Route path='/' element={<MainDash />} />
+        {
+          ROUTES.map((route,i) =><Route path={route.path} element={route.element} key={i} /> )
+        }
+        {/* <Route path='/' element={<MainDash />} />
         <Route path='/addfood' element={<AddFood />} />
         <Route path='/explore' element={<Explore />} />
         <Route path='/viewfood' element={<ViewFood />} />
@@ -100,7 +104,7 @@ const HomeStack = () => {
         <Route path='/notifications' element={<Notifications />} />
         <Route path='/viewnotifications' element={<ViewNotifications />} />
         <Route path='/channels' element={<Channels />} />
-        <Route path='/viewchannels' element={<ViewChannels />} />
+        <Route path='/viewchannels' element={<ViewChannels />} /> */}
       </Routes>
     </BrowserRouter>
   )

@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.row {
+    /* width: 80%; */
+    margin-bottom: 20px;
+}
+
+.form p{
+    font-size: medium;
+    margin-right: 15px;
+    width: 25%;
+}
+
+.form {
+    padding-right: 20px;
+}
